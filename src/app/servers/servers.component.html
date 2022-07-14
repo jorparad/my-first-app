@@ -1,3 +1,39 @@
-<button class="btn btn-primary" [disabled]="!allowNewServer">Add Server</button>
+<div>
+  <label for="server-name">Server Name</label>
+  <input
+    type="text"
+    name="server-name"
+    id="server-name"
+    class="form-control"
+    [(ngModel)]="serverName"
+  />
+  <p>{{ serverName }}</p>
+  <button
+    class="btn btn-primary"
+    [disabled]="!allowNewServer"
+    (click)="onCreateServer()"
+  >
+    Add Server
+  </button>
+</div>
+<div>
+  <label for="user-name">User Name</label>
+  <input
+    type="text"
+    name="user-name"
+    id="user-name"
+    class="form-control"
+    [(ngModel)]="userName"
+  />
+  <p>{{ userName }}</p>
+  <button
+    class="btn btn-primary"
+    (click)="onResetUserName()"
+    [disabled]="!userName"
+  >
+    Reset User Name
+  </button>
+</div>
+<p [innerText]="serverCreationStatus"></p>
 <app-server></app-server>
 <app-server></app-server>
