@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
 export class ServerComponent {
   serverId = 10;
   serverStatus = 'offline';
+  showDetails = false;
+  clickLog = [];
 
   constructor() {
     this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
@@ -15,5 +17,10 @@ export class ServerComponent {
 
   getColor() {
     return this.serverStatus === 'online' ? 'green' : 'red';
+  }
+
+  onDisplayDetails() {
+    this.showDetails = !this.showDetails;
+    this.clickLog.push('Clicked on: ' + Date().toString());
   }
 }

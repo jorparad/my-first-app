@@ -6,3 +6,13 @@
     >{{ serverStatus }}</span
   >
 </h3>
+
+<button class="btn secondary-btn" (click)="onDisplayDetails()">
+  Display Details
+</button>
+
+<p *ngIf="showDetails">Server details</p>
+
+<pre>
+    <p *ngFor="let logItem of clickLog; let i = index" [ngStyle]="{ backgroundColor: i >= 5 ? 'blue' : 'transparent'}" [ngClass]="{ white: i >= 5}">{{ logItem }} - {{i}}</p>
+</pre>
