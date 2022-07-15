@@ -1,1 +1,8 @@
-<h3>Server with ID {{ serverId }} is <span class="badge badge-success">{{ serverStatus }}</span></h3>
+<h3 [ngClass]="{ online: serverStatus === 'online' }">
+  Server with ID {{ serverId }} is
+  <span
+    [ngStyle]="{ backgroundColor: getColor() }"
+    class="badge badge-success"
+    >{{ serverStatus }}</span
+  >
+</h3>
